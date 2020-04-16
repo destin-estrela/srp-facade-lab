@@ -6,17 +6,17 @@ import java.util.List;
 public class SimpleGameEngine implements IGameEngine {
 
     private List<IEnemy> enemies;
-    private List<RpgPlayer> players;
+    private List<Player> players;
 
     public SimpleGameEngine(){
         enemies = new ArrayList<IEnemy>();
         enemies.add(new SimpleEnemy("Creeper"));
         enemies.add(new SimpleEnemy("Zombie"));
         enemies.add(new SimpleEnemy("Golem"));
-        players = new ArrayList<RpgPlayer>();
+        players = new ArrayList<Player>();
     }
 
-    public void addPlayer(RpgPlayer player){
+    public void addPlayer(Player player){
         players.add(player);
     }
 
@@ -34,7 +34,7 @@ public class SimpleGameEngine implements IGameEngine {
     }
 
     @Override
-    public List<IEnemy> getEnemiesNear(RpgPlayer player) {
+    public List<IEnemy> getEnemiesNear(Player player) {
         //Meant to be the simplest logic
         if (players.get(0).equals(player))
                 return enemies; //First player got all enemies
